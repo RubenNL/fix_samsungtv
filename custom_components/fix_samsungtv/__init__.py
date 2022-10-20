@@ -2,12 +2,12 @@ from __future__ import annotations
 
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.typing import ConfigType
-import subprocess
 
 # The domain of your component. Should be equal to the name of your component.
 DOMAIN = "fix_samsungtv"
 
 
 def setup(hass: HomeAssistant, config: ConfigType) -> bool:
-    subprocess.call("/config/fix_samsungtv.sh")
+    with open("/usr/src/homeassistant/homeassistant/components/samsungtv/media_player.py", "a") as myfile:
+      myfile.write("    async def async_select_source(self, source: str) -> None:\n      await self._async_send_keys([source])")
     return True
