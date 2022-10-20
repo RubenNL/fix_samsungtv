@@ -9,5 +9,5 @@ DOMAIN = "fix_samsungtv"
 
 def setup(hass: HomeAssistant, config: ConfigType) -> bool:
     with open("/usr/src/homeassistant/homeassistant/components/samsungtv/media_player.py", "a") as myfile:
-      myfile.write("    async def async_select_source(self, source: str) -> None:\n      await self._async_send_keys([source])")
+      myfile.write("    async def async_select_source(self, source: str) -> None:\n      await self._async_send_keys(source.split(','))")
     return True
