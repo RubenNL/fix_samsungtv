@@ -29,7 +29,7 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
     exitcode=p.returncode
     _LOGGER.debug("stderr: "+stderr)
     _LOGGER.debug("stdout: "+stdout)
-    _LOGGER.debug("exit code:"+exitcode)
+    _LOGGER.debug("exit code:"+str(exitcode))
     return True
 
 
