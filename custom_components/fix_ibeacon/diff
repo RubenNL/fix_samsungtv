@@ -66,7 +66,13 @@ index 33b33c5..dff7870 100644
 -            # once _async_update_rssi_and_transients has seen them enough times
 -            self._transient_seen_count[address] = 1
 -            return
-
++#        if not previously_tracked and new and ibeacon_advertisement.transient:
++#            # Do not create a new tracker right away for transient devices
++#            # If they keep advertising, we will create entities for them
++#            # once _async_update_rssi_and_transients has seen them enough times
++#            self._transient_seen_count[address] = 1
++#            return
+ 
          # Some manufacturers violate the spec and flood us with random
          # data (sometimes its temperature data).
 diff --git a/ibeacon/device_tracker.py b/ibeacon/device_tracker.py
