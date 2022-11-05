@@ -21,7 +21,7 @@ def setup(hass: HomeAssistant, config: ConfigType) -> bool:
     currentpath = os.path.dirname(__file__)
     _LOGGER>debug(currentpath)
     diff_file = os.path.join(currentpath, "diff")
-    _LOGGER>debug(diff_file)
+    _LOGGER.debug(diff_file)
     p = subprocess.Popen(["git","apply",diff_file], cwd="/usr/src/homeassistant/homeassistant/components", stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     p.wait()
     stderr=proc.stderr.read().decode()
