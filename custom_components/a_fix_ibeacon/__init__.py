@@ -8,7 +8,7 @@ import logging
 _LOGGER = logging.getLogger(__name__)
 
 # The domain of your component. Should be equal to the name of your component.
-DOMAIN = "fix_ibeacon"
+DOMAIN = "a_fix_ibeacon"
 
 
 def setup(hass: HomeAssistant, config: ConfigType) -> bool:
