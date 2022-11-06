@@ -7,7 +7,7 @@ index 6d6751f..611fed5 100644
  DATA_MANAGER: Final = "bluetooth_manager"
  
 -UNAVAILABLE_TRACK_SECONDS: Final = 60 * 5
-+UNAVAILABLE_TRACK_SECONDS: Final = 60
++UNAVAILABLE_TRACK_SECONDS: Final = 20
  
  START_TIMEOUT = 15
  
@@ -20,12 +20,12 @@ index 19b3a6f..6d1b660 100644
  ATTR_SOURCE = "source"
  
 -UNAVAILABLE_TIMEOUT = 180  # Number of seconds we wait for a beacon to be seen before marking it unavailable
-+UNAVAILABLE_TIMEOUT = 30  # Number of seconds we wait for a beacon to be seen before marking it unavailable
++UNAVAILABLE_TIMEOUT = 10  # Number of seconds we wait for a beacon to be seen before marking it unavailable
  
  # How often to update RSSI if it has changed
  # and look for unavailable groups that use a random MAC address
 -UPDATE_INTERVAL = timedelta(seconds=60)
-+UPDATE_INTERVAL = timedelta(seconds=10)
++UPDATE_INTERVAL = timedelta(seconds=3)
  
  # If a device broadcasts this many unique ids from the same address
  # we will add it to the ignore list since its garbage data.
