@@ -33,29 +33,6 @@ diff --git a/ibeacon/coordinator.py b/ibeacon/coordinator.py
 index 33b33c5..dff7870 100644
 --- a/ibeacon/coordinator.py
 +++ b/ibeacon/coordinator.py
-@@ -84,15 +84,13 @@ def _async_dispatch_update(
-     unique_address: bool,
- ) -> None:
-     """Dispatch an update."""
--    if new:
--        async_dispatcher_send(
--            hass,
--            SIGNAL_IBEACON_DEVICE_NEW,
--            device_id,
--            async_name(service_info, ibeacon_advertisement, unique_address),
--            ibeacon_advertisement,
--        )
--        return
-+    async_dispatcher_send(
-+        hass,
-+        SIGNAL_IBEACON_DEVICE_NEW,
-+        device_id,
-+        async_name(service_info, ibeacon_advertisement, unique_address),
-+        ibeacon_advertisement,
-+    )
- 
-     async_dispatcher_send(
-         hass,
 @@ -308,12 +306,12 @@ class IBeaconCoordinator:
                  self.hass, self._async_handle_unavailable, address
              )
