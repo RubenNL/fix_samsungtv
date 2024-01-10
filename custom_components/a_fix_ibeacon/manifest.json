@@ -1,7 +1,7 @@
 {
   "domain": "a_fix_ibeacon",
   "name": "A Fix ibeacon",
-  "documentation": "https://gitlab.rubend.nl/libraries/hacs-components",
+  "documentation": "https://github.com/RubenNL/hacs-components",
   "dependencies": [],
   "codeowners": [],
   "requirements": [],
